@@ -1,0 +1,20 @@
+package com.hw.mall.coupon.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.hw.common.utils.PageUtils;
+import com.hw.mall.coupon.entity.SkuFullReductionEntity;
+
+import java.util.Map;
+
+/**
+ * 商品满减信息
+ *
+ * @author huangwei
+ * @email 1074882994@qq.com
+ * @date 2022-06-17 16:09:39
+ */
+public interface SkuFullReductionService extends IService<SkuFullReductionEntity> {
+
+    PageUtils queryPage(Map<String, Object> params);
+}
+
