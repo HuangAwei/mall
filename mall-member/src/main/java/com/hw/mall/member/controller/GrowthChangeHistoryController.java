@@ -3,18 +3,16 @@ package com.hw.mall.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.hw.mall.member.feign.TestFeign;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.hw.mall.member.entity.GrowthChangeHistoryEntity;
 import com.hw.mall.member.service.GrowthChangeHistoryService;
 import com.hw.common.utils.PageUtils;
 import com.hw.common.utils.R;
 
+import javax.annotation.Resource;
 
 
 /**
@@ -29,6 +27,15 @@ import com.hw.common.utils.R;
 public class GrowthChangeHistoryController {
     @Autowired
     private GrowthChangeHistoryService growthChangeHistoryService;
+
+    @Resource
+    private TestFeign testFeign;
+
+    @GetMapping("t")
+    public String t(){
+        String test = testFeign.test();
+        return test;
+    }
 
     /**
      * 列表
